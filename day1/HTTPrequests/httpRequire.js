@@ -1,12 +1,14 @@
 'use strict';
 
-// import { getHTML, printHTML } from "./httpModules";
-const _mods = require('./httpModules');
+const getHTML = require('./httpModules');
 
 const requestOptions = {
   host: 'sytantris.github.io',
   path: '/http-examples/step5.html'
 };
 
+function printHTML (html) {
+    console.log(html.join('\n========= NEXT CHUNK ========\n'));
+}
 
-_mods.getHTML(requestOptions, _mods.printHTML);
+getHTML(requestOptions, printHTML);

@@ -3,7 +3,7 @@
 const https = require('https');
 
 
-function getHTML (options, callback) {
+module.exports = function getHTML (options, callback) {
   let dataBuffer = [];
 
   https.get(options, function(response){
@@ -20,10 +20,3 @@ function getHTML (options, callback) {
   });
 
 };
-
-function printHTML (html) {
-    console.log(html.join('\n========= NEXT CHUNK ========\n'));
-}
-
-
-module.exports = { getHTML, printHTML };
