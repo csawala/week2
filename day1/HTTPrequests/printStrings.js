@@ -1,12 +1,14 @@
-var https = require('https');
+'use strict';
+
+const https = require('https');
 
 function getAndPrintHTML () {
-  var requestOptions = {
+  const requestOptions = {
     host: 'sytantris.github.io',
     path: '/http-examples/step2.html'
   };
 
-  var dataBuffer = [];
+  let dataBuffer = [];
 
   https.get(requestOptions, function(response){
     response.setEncoding('utf8');
